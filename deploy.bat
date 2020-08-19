@@ -1,0 +1,1 @@
+scp .\target\housecontrol-0.0.1-SNAPSHOT.jar pi@raspi.stift.me:~/housecontrol-server
