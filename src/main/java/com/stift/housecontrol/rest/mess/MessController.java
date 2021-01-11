@@ -27,8 +27,18 @@ public class MessController {
     private KnxConnectionService knxConnectionService;
 
     @RequestMapping(path = "feeledtemp", method = RequestMethod.GET)
-    public float get(@Context HttpServletResponse response) {
+    public float getFeeledTemp(@Context HttpServletResponse response) {
         return currentMeasurements.getFeeledTemperature();
+    }
+
+    @RequestMapping(path = "temp", method = RequestMethod.GET)
+    public float getTemp(@Context HttpServletResponse response) {
+        return currentMeasurements.getTemperature();
+    }
+
+    @RequestMapping(path = "rain", method = RequestMethod.GET)
+    public boolean getRain(@Context HttpServletResponse response) {
+        return currentMeasurements.isRain();
     }
 
     @RequestMapping(path = "hell1", method = RequestMethod.GET)
@@ -42,10 +52,8 @@ public class MessController {
     }
 
     @RequestMapping(path = "windspeed", method = RequestMethod.GET)
-    public Double getWindSpeed(@Context HttpServletResponse response) throws KNXException, InterruptedException {
-        final Datapoint dp = new StateDP(Mess.WIND.getGroupAddress(), Mess.WIND.name());
-        dp.setDPT(0, DPTXlator2ByteFloat.DPT_WIND_SPEED_KMH.getID());
-        return (Double) knxConnectionService.getMess(dp);
+    public float getWindSpeed(@Context HttpServletResponse response) throws KNXException, InterruptedException {
+        return currentMeasurements.getWindSpeed();
     }
 
 

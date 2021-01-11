@@ -28,7 +28,8 @@ public enum Jalousie {
     KINDERZIMMER3(3,2,10),
 
 
-    FASSADE_SUED(5, 0, 4);
+    FASSADE_SUED(5, 0, 4),
+    FASSADE_OST(5, 0, 3);
 
 
     private final int g1;

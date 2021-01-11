@@ -63,10 +63,10 @@ public class OfficeController {
     }
 
     @RequestMapping(path = "jalousie/main/position/{position}", method = RequestMethod.PUT)
-    public void openMainOfficeJalousie(@RequestParam("position") int position, @Context HttpServletResponse response) throws KNXException {
+    public void openMainOfficeJalousie(@PathVariable ("position") int position, @Context HttpServletResponse response) throws KNXException {
         LOGGER.info("Set Main Office Jalousie Position to {} received", position);
         Preconditions.checkState(position >= 0 && position <= 100);
-        knxConnectionService.setJalousiePosition(Jalousie.BUERO.getGroupAddress(), position);
+        knxConnectionService.setJalousiePosition(Jalousie.FASSADE_OST.getGroupAddress(), position);
     }
 
 

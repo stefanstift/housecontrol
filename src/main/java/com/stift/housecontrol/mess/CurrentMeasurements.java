@@ -9,6 +9,7 @@ public class CurrentMeasurements {
     private float temperature;
     private float absHummidty;
     private float relHummidity;
+    private float windSpeed;
 
     private boolean rain;
 
@@ -60,5 +61,13 @@ public class CurrentMeasurements {
 
     public void setRain(boolean rain) {
         this.rain = rain;
+    }
+
+    public float getWindSpeed() {
+        return windSpeed;
+    }
+
+    public void setWindSpeed(float windSpeed) {
+        this.windSpeed = windSpeed;
     }
 }
