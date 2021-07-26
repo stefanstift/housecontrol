@@ -29,7 +29,7 @@ import java.net.InetSocketAddress;
 public class KnxConnectionService implements InitializingBean {
 
     private static final InetSocketAddress server = new InetSocketAddress("knx.stift.me", KNXnetIPConnection.DEFAULT_PORT);
-    private static final InetSocketAddress me = new InetSocketAddress("192.168.8.132", KNXnetIPConnection.DEFAULT_PORT);
+    private static final InetSocketAddress me = new InetSocketAddress("raspi.stift.me", KNXnetIPConnection.DEFAULT_PORT);
 
     private KNXNetworkLink connection;
 
